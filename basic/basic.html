@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // 1. 스크립트 코드 위치
+      // alert("경고");
+    </script>
+
+    <!-- 3. 외부 파일로 작성하는 경우  -->
+    <!-- TODO: 아직 "burron" 생성이 안되었는데 해당 스크립트를 실행해서 나는 에러
+Uncaught TypeError: Cannot read properties of null (reading 'addEventListener') -->
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <!-- 
+        JS 스크립트 생태계
+
+        1) version : ES14 - 2023 (ECMAScript 14)
+        2) ES6 - 2015 버전부터 자바스크립트 큰 변화가 일어남
+        3) Runtime(자바스크립트 실행)
+          1. 브라우저
+          2. Node.js
+        
+        4) FrameWork
+          - Vue.js
+          - React (수업)
+          - ...
+        
+        5) Library
+          - jQuery (수업)
+
+        6) 무엇을 할 것인가?
+          - HTML content 변경
+          - HTML element 속성 변경
+          - HTML element style 변경
+          - 사용자의 입력을 서버로 보내기 전에 확인
+
+        자바와 문법 유사(대소문자 구별함)
+        javascript 와 java 는 완전히 다름
+        - 줄단위 해석 후 실행 / 클래스단위 실행
+    -->
+
+    <!-- <button type="button" onclick="">클릭</button> -->
+    <button type="button">클릭</button>
+    <script>
+      // 2. 스크립트 코드 위치(추천)
+      // alert("경고");
+    </script>
+    <!-- 3. 외부 파일로 작성하는 경우  -->
+    <script src="./script.js"></script>
+  </body>
+</html>
