@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // function 함수(반복되는 코드 재사용, 단독 작성) == 메소드(반복되는 코드 재사용, 클래스 내 선언)
+
+      // 함수 생성
+      //TODO: 1) function keyword 사용
+      function name(params) {
+        // 해야 할 일 나열
+        console.log("1  함수 호출");
+        console.log(params);
+      }
+      // 2) function expression (함수 표현식) 사용
+      const x = function (a, b) {
+        //name2 안주는 경우, 주는 경우 다 있음
+        return a * b;
+      };
+      const y = function name2(a, b) {
+        // name2 는 함수 내부에서쓰는 이름임. 밖에서 사용 못함(함수 호출과 같은 경우)
+        return a * b;
+      };
+
+      //TODO: 3) arrow (화살표 함수) 사용
+      const add = (a, b) => {
+        return a + b;
+      };
+
+
+      // 함수 사용 = 호출
+      name(); //TODO: parameter 안넘겨도 동작함
+      name(3);
+      console.log("연산 결과 keyword : ", x(5, 6));
+      console.log("연산 결과 expression : ", y(9, 6)); //Uncaught ReferenceError: name2 is not defined
+      console.log("연산 결과 arrow : ", add(9, 6));
+    </script>
+  </body>
+</html>

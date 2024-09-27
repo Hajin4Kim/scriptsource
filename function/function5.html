@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // q1) 두 개의 숫자를 받아, 빼는 결과를 리턴하는 함수
+      //      function 키워드 사용
+      let input1 = parseInt(prompt("숫자 1 입력하시오 : "));
+      let input2 = parseInt(prompt("숫자 2 입력하시오 : "));
+
+      function subtract(input1, input2) {
+        console.log("input1 - input2 = ", input1 - input2);
+      }
+      subtract(input1, input2);
+
+      // q2) q1에서 작성했던 함수를 함수 표현식으로 변경
+      const subtract2 = function (input1, input2) {
+        console.log("input1 - input2 = ", input1 - input2);
+      };
+      subtract(input1, input2);
+
+      //  q3) q2 작성했던 함수를 arrow 함수로 변경
+      let sub = (input1, input2) => {
+        console.log("input1 - input2 = ", input1 - input2);
+      };
+      subtract(input1, input2);
+
+      // =============================================
+      // q4) 한개의 숫자를 인자로 받아 그 숫자가 3의 배수인지 확인하는 함수 작성 3의 배수라면 화면에 "박수"
+      // 라는 글자 출력 / 아니라면 "통과" 출력
+      let inputNum = parseInt(prompt("3의 배수? 숫자 입력 : "));
+      let threeX = (inputNum) => {
+        if (inputNum % 3 == 0) {
+          document.write("박수", "<br>");
+        } else document.write("통과", "<br>");
+      };
+      threeX(inputNum);
+      // q5) q4 개선하여 3의 경우 박수, 9의 배수인 경우 "박수X2", 나머지 "통과"
+      let inputNum2 = parseInt(prompt("3의 배수? 9의 배수? 숫자 입력 : "));
+      let threeNineX = (inputNum2) => {
+        if (inputNum2 % 3 == 0) {
+          document.write("박수", "<br>");
+        } else if (inputNum2 % 9 == 0) {
+          document.write("박수X2", "<br>");
+        } else document.write("통과", "<br>");
+      };
+      threeNineX(inputNum);
+      // q6) 시험 점수를 입력하면 결과를 알려주는 함수 작성 : 두 과목을 합해서 120점 이상이면 합격,
+      // 단, 한과목이 40점 미만이면 과락으로 불합격
+      let grade1 = parseInt(prompt("과목 1 점수 입력 : "));
+      let grade2 = parseInt(prompt("과목 2 점수 입력 : "));
+
+      let ifPassTest = (grade1, grade2) => {
+        if (grade1 + grade2 >= 120 && grade1 > 40 && grade2 > 40) {
+          document.write("합격", "<br>");
+        } else if (grade1 + grade2 >= 120 && (grade1 < 40 || grade2 < 40)) {
+          document.write("과락 : 불합격", "<br>");
+        } else {
+          document.write("불합격", "<br>");
+        }
+      };
+      ifPassTest(grade1, grade2);
+      // q7) 3의 배수에서 박수를 치는 게 아니라, 끝자리가 3,6,9로 끝나는 숫자라면 "박수" 출력
+      
+    </script>
+  </body>
+</html>

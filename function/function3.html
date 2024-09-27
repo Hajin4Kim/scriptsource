@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //TODO: 변수 hoisting var (변수 생성 전에 함수 호출) : 선언되지 않은 변수를 끌어올려 실행
+      //  let, const : 변수 hoisting 불가
+      console.log("z : ", z);
+      // var z = 10;
+      let z = 10; //TODO: 변수 hoisting 못쓰도록 let, const 사용: Uncaught ReferenceError: Cannot access 'z' before initialization
+
+      // 함수 정의 방식 비교
+      //TODO: 함수 hoisting (함수 생성 전에 함수 호출) : 선언되지 않은 함수를 끌어올려 실행
+      const result = multiply(5, 3);
+      console.log("result = ", result);
+
+      function multiply(x, y) {
+        return x * y;
+      }
+
+      // ReferenceError: let 또는 const keyword에 함수 담는 방식에서는 hoisting 허용안함
+      //TODO: hoisting 못쓰도록 하는 법:  let 또는 const keyword에 함수 담아 사용하기
+      multiply2(5, 6); // function3.html:19 Uncaught ReferenceError: Cannot access 'multiply2' before initialization
+      const multiply2 = (a, b) => a * b;
+    </script>
+  </body>
+</html>
