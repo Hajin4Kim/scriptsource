@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table,
+      td {
+        border: 1px solid black;
+      }
+      p {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="outside">
+      <tr>
+        <td id="t1">one</td>
+      </tr>
+      <tr>
+        <td id="t2">two</td>
+      </tr>
+    </table>
+    <p id="demo">Click me</p>
+    <script>
+      // table 클릭 시 t2 요소의 텍스트가 two => three, three => two (레퍼런스:dom > dom2.html)
+      // 1. 이벤트 대상 찾기 / 2. 해야 할 함수 작성 / 3. 연결
+      const table = document.getElementById("outside");
+      table.addEventListener("click", () => {
+        const t2 = document.querySelector("#t2");
+        // TODO: 1. 중첩 애로우 함수 표현
+
+        // if (t2.textContent == "three") {
+        //   t2.textContent = "two";
+        // } else if (t2.textContent == "two") {
+        //   t2.textContent = "three";
+        // }
+        //TODO: 2. 삼항연산자로 더 간단하게 표현 가능
+        t2.textContent = t2.textContent == "three" ? "two" : "three";
+      });
+
+      // p 요소 클릭 시 Good Job!! 변경
+      const pClick = document.querySelector("#demo");
+
+      // pClick.addEventListener("click", () => {
+      //   pClick.innerHTML = "Good Job!!";
+      // });
+
+      pClick.addEventListener("click", (e) => {
+        // e.target : 이벤트가 일어난 대상 == pClick
+        e.target.innerHTML = "Good Job!!";
+      });
+    </script>
+  </body>
+</html>

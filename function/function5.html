@@ -65,7 +65,18 @@
       };
       ifPassTest(grade1, grade2);
       // q7) 3의 배수에서 박수를 치는 게 아니라, 끝자리가 3,6,9로 끝나는 숫자라면 "박수" 출력
-      
+      function multiply3(num) {
+        let digit = num % 10;
+
+        if (digit == 3 || digit == 6 || digit == 9) {
+          console.log("박수");
+        } else {
+          console.log("통과");
+        }
+      }
+
+      multiply3(10);
+      multiply3(16);
     </script>
   </body>
 </html>

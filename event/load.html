@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // // body는 아직 그리기 전임: ERROR
+      // //TODO: Uncaught TypeError: Cannot read properties of null (reading 'addEventListener')
+      // const btn = document.querySelector("button");
+      // btn.addEventListener("click", () => alert("클릭"));
+
+      // //TODO: body가 load 된 후
+      // window.onload = function () {
+      //   const btn = document.querySelector("button");
+      //   btn.addEventListener("click", () => alert("클릭"));
+      // };
+    </script>
+  </head>
+  <body>
+    <button>클릭하세요</button>
+    <script>
+      // head 에 script 단을 넣는게 아니라면 굳이 window.onload 할 필요 없음 (이미 로드 된 상황)
+      const btn = document.querySelector("button");
+      btn.addEventListener("click", () => alert("클릭"));
+    </script>
+  </body>
+</html>

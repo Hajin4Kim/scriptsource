@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    /* #header {
+      color: blue;
+      font-size: 40px;
+      padding: 10px;
+      border: 1px solid red;
+    } */
+    .header {
+      color: red;
+    }
+  </style>
+  <body>
+    <h1 id="header">Header 1</h1>
+    <h1 id="header2" class="one two">Header1</h1>
+    <script>
+      // #header 요소의 style 지정
+      const headerMod = document.querySelector("#header");
+
+      // 속성명이 두 글자 이상인 경우, camelcase로 작성(예. fontSize)
+      headerMod.style.color = "blue";
+      headerMod.style.fontSize = "40px";
+      headerMod.style.padding = "10px";
+      headerMod.style.border = "1px solid red";
+
+      // #header2 요소의 class 변경
+      const header2 = document.querySelector("#header2");
+
+      // header2 요소 전체 클래스 가져오기
+      console.log(header2.classList);
+      console.log(header2.classList[0]);
+      console.log(header2.classList[1]);
+      // 배열형태 아닌 문자열 형태로 한번에 가져옴
+      console.log(header2.className);
+
+      // one => header 로 변경
+      header2.classList.replace("one", "header");
+
+      // 클래스 추가
+      header2.classList.add("three");
+
+      // toggle: 없으면 추가하고, 이미 존재하는 경우는 제거 (on/off 기능같이)
+      header2.classList.toggle("four");
+      header2.classList.toggle("three");
+
+      header2.classList.remove("two");
+    </script>
+  </body>
+</html>
