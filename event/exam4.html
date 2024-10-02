@@ -29,16 +29,27 @@
     </nav>
     <script>
       const badge = document.querySelector(".badge");
-
+      const body = document.querySelector("body");
       // badge 클릭시 bg-dark 클래스명이 있으면 bg-warning으로 변경
       badge.addEventListener("click", (e) => {
         if (e.target.classList.contains("bg-dark")) {
           badge.classList.replace("bg-dark", "bg-warning");
+          // 글자 색상 검정색, 글자 Light🔁
+          badge.style.color="black";
+          badge.innerHTML = "Light 🔁";
+          // body.style.backgroundColor = "white";
+          body.classList.add("bg-dark");
+          
         } else {
+      // badge 클릭시 bg-warning 클래스명이 있으면 bg-dark 로 변경
           badge.classList.replace("bg-warning", "bg-dark");
+          // 글자 색상 흰색, 글자 Dark🔁
+          badge.style.color="white";
+          badge.innerHTML = "Dark 🔁";
+          // body.style.backgroundColor = "black";
+          body.classList.remove("bg-dark");
         }
       });
-      // badge 클릭시 bg-warning 클래스명이 있으면 bg-dark 으로 변경
     </script>
   </body>
 </html>
